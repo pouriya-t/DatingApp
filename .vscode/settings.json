@@ -1,0 +1,8 @@
+{
+    "workbench.enableExperiments": false,
+    "telemetry.enableCrashReporter": false,
+    "git.autofetch": true,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "telemetry.enableTelemetry": false,
+    "npm.fetchOnlinePackageInfo": false
+}
