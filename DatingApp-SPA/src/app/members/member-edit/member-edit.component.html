@@ -5,7 +5,8 @@
     </div>
     <div class="col-sm-8">
       <div *ngIf="editForm.dirty" class="alert alert-info">
-        <strong>Information</strong> You have made changes. Any unsaved changes will be lost !
+        <strong>Information</strong> You have made changes. Any unsaved changes
+        will be lost !
       </div>
     </div>
   </div>
@@ -28,15 +29,21 @@
           </div>
           <div>
             <strong>Last Active:</strong>
-            <p>{{ user.lastActive }}</p>
+            <p>{{ user.lastActive | timeAgo }}</p>
           </div>
           <div>
             <strong>since :</strong>
-            <p>{{ user.created }}</p>
+            <p>{{ user.created | date: "mediumDate" }}</p>
           </div>
         </div>
         <div class="card-footer">
-          <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save Changes</button>
+          <button
+            [disabled]="!editForm.dirty"
+            form="editForm"
+            class="btn btn-success btn-block"
+          >
+            Save Changes
+          </button>
         </div>
       </div>
     </div>
@@ -86,8 +93,10 @@
             </form>
           </tab>
           <tab heading="Edit Photos">
-            <app-photo-editor [photos]="user.photos" 
-            (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
+            <app-photo-editor
+              [photos]="user.photos"
+              (getMemberPhotoChange)="updateMainPhoto($event)"
+            ></app-photo-editor>
           </tab>
         </tabset>
       </div>
